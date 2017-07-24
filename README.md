@@ -50,3 +50,45 @@ Para começarmos crie (pela linha de comando ou de forma tradicional), uma pasta
 Isso muda o **diretório atual** é a referência de onde os comandos vão ser executados.
 
 > Pense no diretório atual como a palavra **aqui**. A palavra não muda mas o significado do que é **aqui** é totalmente diferente se você está em casa ou no trabalho.
+
+## Iniciando o nosso projeto
+
+Agora que estamos com a linha de comando aberta na pasta desejada (A pasta projeto2 no caso), podemos iniciar o nosso projeto **node**.
+
+Vamos executar um comando para iniciar o nosso projeto node. À fim de nos familiarizarmos mais com a linha de comando vamos usar uma abordagem interativa para isso.
+
+Digite o comando
+
+```shell
+npm init
+```
+
+Isso significa "Programa npm execute o comando init", várias perguntas aparecerão e você vai poder responder todas uma por vez.
+
+Caso queira usar a opção exibida aperte enter. Caso queira digitar algo digite, um exemplo desse processo encontra-se abaixo:
+
+[![Npm init](./npmInit.gif)](./npmInit.gif)
+
+Ao final desse processo é gerado para nós um arquivo chamado **package.json** que possuí um formato similar à esse:
+
+```json
+{
+  "name": "projeto_dois",
+  "version": "0.0.1",
+  "description": "Um projeto para o FCC-SP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "FCC",
+    "PUG",
+    "SASS",
+    "TUTORIAL"
+  ],
+  "author": "fabiocostadev@gmail.com",
+  "license": "MIT"
+}
+```
+
+Se você não gostar da aparência desse arquivo pode editar usando seu editor favorito ou rodar o comando npm init novamente.
