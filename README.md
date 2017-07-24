@@ -210,3 +210,93 @@ Você pode abrir esse arquivo no navegador e averiguar que ele deve parecer algo
 Nosso objetivo é **Separar a informação da apresentação** ou seja, termos uma série de eventos e um layout e aplicar o mesmo para todos.
 
 [![Diagrama de templates](./diagramaTemplates.png)](./diagramaTemplates.png)
+
+### Eliminando a repetição com um sistema de templates
+
+Agora o objetivo é eliminar a repetição de cada evento e transferir ele para um **componente** reutilizável. Vamos modificar nosso programa para pegar uma lista de eventos e publicar um HTML exatamente igual ao que já criamos utilizando o pug.
+
+Primeiro vamos faze exatamente o mesmo código como pug e não como HTML. Salve o código abaixo em um arquivo chamado template.pug.
+
+```pug
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Lista de eventos
+  body
+    ul
+      li
+        b Programação defensiva - Como fazer seus robôs não te matarem
+        |  - 01/02/2900
+      li
+        b Arrumando seus braços robóticos com PHP
+        |  - 04/02/2900
+      li
+        b Desenvolvimento de jogos ... Mortais
+        |  - 07/05/2900
+      li
+        b Hackeando a matrix para negociar aumentos
+        |  - 01/06/2900
+      li
+        b Programando robôs gigantes utilizando NodeJS
+        |  - 09/06/2900
+```
+
+Perceba que a sintaxe é diferente, a repetição de elementos no final é eliminada os sinais também são omitidos. A ideia é diminuir a repetição também de código.
+
+[:computer:](https://github.com/FreeCodeCampSp/projeto1_parte_2_codigos/tree/31afd01b212707aa56998a783376525a5f7d78f8)
+
+Isso é nosso template, nós precisamos agora fazer com que esse arquivo se torne um arquivo .html que o navegador realmente entenda. Para isso vamos modificar aquele programa de hello world para pegar esse arquivo template.pug e criar um arquivo resultado.html.
+
+O código completo dessa etapa encontra-se abaixo mas vamos comentar ele em detalhes passo a passo:
+
+```javascript
+// Pega o pacote para lidar com arquivos do node (fs = file system, sistema de arquivos)
+var fs = require('fs')
+// Pega o pacote instalado pug
+var pug = require('pug')
+//Retorna uma função que sabe transformar nosso template em HTML
+var compileFunction = pug.compileFile('template.pug')
+// Escreve em um arquivo chamado  resultado.html
+fs.writeFileSync('resultado.html', compileFunction())
+```
+
+Na primeira parte nós usamos uma função do node chamada **require**.
+
+```javascript
+var fs = require('fs')
+```
+
+Isso significa basicamente o seguinte:
+> Hey sistema de gerenciador de pacotes, ache algum pacote com esse nome, seja os instalados (por npm install) ou os que você já veio junto. Obrigado!
+
+Então nós pedimos para ele pegar um pacote chamdo **fs** que é o que o node usa para lidar com arquivos.
+
+Em seguida pedimos nosso recém instalado pug:
+
+```javascript
+var pug = require('pug')
+```
+
+Em seguida nós pedimos para ele pegar o template e nos retornar uma função que aplica esse template (Você pode pensar nela como aquele molde na analogia). Essa função pode pegar um template (no nosso caso algo estático ainda) e construir HTML com ele.
+
+```javascript
+var compileFunction = pug.compileFile('template.pug')
+```
+
+Em seguida nós pedimos para pegar o resultado do template (quando chamamso a compileFunction no final) e salvar em um arquivo com o nome de resultado.html
+
+```javascript
+fs.writeFileSync('resultado.html', compileFunction())
+```
+
+Ao invocar o programa como abaixo
+```javascript
+node index.js
+```
+
+Um arquivo resultado.html deve ser gerado (todo em uma linha só mesmo, o navegador não liga) assim com o abaixo
+
+```html
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Lista de eventos</title></head><body><ul><li><b>Programação defensiva - Como fazer seus robôs não te matarem</b> - 01/02/2900</li><li><b>Arrumando seus braços robóticos com PHP</b> - 04/02/2900</li><li><b>Desenvolvimento de jogos ... Mortais</b> - 07/05/2900</li><li><b>Hackeando a matrix para negociar aumentos</b> - 01/06/2900</li><li><b>Programando robôs gigantes utilizando NodeJS</b> - 09/06/2900</li></ul></body></html>
+```
