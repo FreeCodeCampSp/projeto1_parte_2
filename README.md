@@ -5,6 +5,8 @@ Nesta etapa do projeto vamos abordar o [Pug](https://github.com/pugjs/pug) para 
 
 Para usar essas ferramentas necessitamos da **linha de comando** na qual vamos usar o [Node](https://nodejs.org/en/) como forma de escrever programas em JavaScript e a ferramenta [NPM](https://www.npmjs.com/).
 
+> Importante: Toda vez que você ver o símbolo :computer: é um link para como as coisas estão naquele momento.
+
 ## Instalando o Node (E o NPM vem junto)
 
 O Node tem um instalador para todos os sistemas praticamente simplesmente navegue até [o site oficial](https://nodejs.org/en/) e baixe a versão mais atual.
@@ -97,7 +99,7 @@ Se você não gostar da aparência desse arquivo pode editar usando seu editor f
 
 Primeiramente **O que são dependências?** Dependências são códigos feitos por terceiros que nosso código precisa para funcionar. Basicamente nós usamos uma solução que alguém ou várias pessoas ao redor do mundo escreveram e usamos para desenvolver nossa própria solução.
 
-É importante lembrar que todo programa têm um humano por trás dele e grande parte do software atual só funciona porque alguma pessoa resolveu compartilhar sua criação com o mundo. É a belea do [código aberto](https://pt.wikipedia.org/wiki/C%C3%B3digo_aberto) ou [open source](https://en.wikipedia.org/wiki/Open-source_software).
+É importante lembrar que todo programa têm um humano por trás dele e grande parte do software atual só funciona porque alguma pessoa resolveu compartilhar sua criação com o mundo. É a beleza do [código aberto](https://pt.wikipedia.org/wiki/C%C3%B3digo_aberto) ou [open source](https://en.wikipedia.org/wiki/Open-source_software).
 
 A proposta desse projeto é aprender a usar alguma ferramenta de template(Pug) e algum processaodor de CSS(Sass) e também nos familizarizarmos com o desenvolvimento front end moderno com node e linha de comando.Sendo assim vamos começar instaland o pug.
 
@@ -138,9 +140,12 @@ Você também vai notar a pasta node_modules salva com diversas outras pastas de
 
 [![Pasta node modules](./node_modules.png)](./node_modules.png)
 
+
+[:computer:](https://github.com/FreeCodeCampSp/projeto1_parte_2_codigos/tree/d12f6507a50869f0a93a02815ddcabfbd003ac5e)
+
 ### Iniciando nosso programa
 
-Até o momento nós temos apenas um arquivo de configuração feito por uma ferramenta e um monete de código feito pro terceiros. É hora de começarmos a criar.
+Até o momento nós temos apenas um arquivo de configuração feito por uma ferramenta e um monte de código feito pro terceiros. É hora de começarmos a criar.
 
 O Node é uma forma de **executar javascript em um computador e não só no navegador**, ou seja se você sabe javascript você pode programar em node. A **linguagem** é a mesma, apenas o **ambiente** é que muda.
 
@@ -157,3 +162,5 @@ node index.js
 ```
 
 Você deve ver a mensagem "Olá mundo!" no seu terminal.
+
+[:computer:](https://github.com/FreeCodeCampSp/projeto1_parte_2_codigos/tree/9f458f734b48ef145cbca095f5bbf4bc23af68d7)
