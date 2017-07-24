@@ -80,15 +80,58 @@ Ao final desse processo é gerado para nós um arquivo chamado **package.json** 
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "FCC",
-    "PUG",
-    "SASS",
-    "TUTORIAL"
-  ],
-  "author": "fabiocostadev@gmail.com",
+  "author": "fabio <fabiocostadev@gmail.com>",
   "license": "MIT"
 }
 ```
 
 Se você não gostar da aparência desse arquivo pode editar usando seu editor favorito ou rodar o comando npm init novamente.
+
+> Até agora tudo o que fizemos foi:
+> - Instalar um programa
+> - Criar uma pasta
+> - Navegar até essa pasta
+> - Executar um comando que criou um arquivo
+
+### Instalando dependências
+
+Primeiramente **O que são dependências?** Dependências são códigos feitos por terceiros que nosso código precisa para funcionar. Basicamente nós usamos uma solução que alguém ou várias pessoas ao redor do mundo escreveram e usamos para desenvolver nossa própria solução.
+
+É importante lembrar que todo programa têm um humano por trás dele e grande parte do software atual só funciona porque alguma pessoa resolveu compartilhar sua criação com o mundo. É a belea do [código aberto](https://pt.wikipedia.org/wiki/C%C3%B3digo_aberto) ou [open source](https://en.wikipedia.org/wiki/Open-source_software).
+
+A proposta desse projeto é aprender a usar alguma ferramenta de template(Pug) e algum processaodor de CSS(Sass) e também nos familizarizarmos com o desenvolvimento front end moderno com node e linha de comando.Sendo assim vamos começar instaland o pug.
+
+Antes de começar instalando o mundo em nossos computadores só vamos entender como o **gerenciamento de dependências funciona no mundo node**.
+
+- As dependências encontram-se me um local chamado **repositório**.
+- Esse repositório é gerenciado pela **EMPRESA NPM** de forma livre, qualquer pessoa pode públicar suas criações no repositório.
+- Podemos por exemplo pesquisar o **pacote** PUG [aqui](https://www.npmjs.com/package/pug). É porque os criadores do PUG publicaram esse pacote no repositório do NPM que podemos baixar ele.
+- Utilizando a **FERRAMENTA NPM** podemos salvar o código dessa dependência no nosso projeto (aquele que tem o arquivo package.json na raíz).
+- Essa dependência, e **TODAS DEPENDÊNCIAS DELA** e **TODAS DEPENDÊNCIAS DAS DEPENDÊNCIAS DELA** e assim por diante são convenientemente gerenciados por nós pela ferramenta NPM.
+
+Vamos instalar nossa primeira dependência tudo que precisamos fazer é executar o comando (O --save é supérfluo em versões modernas do NPM mas por garantia vamos usá-lo):
+
+```shell
+npm install --save pug
+```
+
+Isso fará com que o programa pug seja salvo em uma pasta chamada node_modules e adicionar o arquivo numa parte de nosso papckage.json. De forma que na parte "dependencies" vai ter alguma versão do pug como no arquivo abaixo.
+
+```json
+{
+  "name": "projeto_dois",
+  "version": "0.0.1",
+  "description": "Um projeto para o FCC-SP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "fabio <fabiocostadev@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "pug": "^2.0.0-rc.2"
+  }
+}
+```
+
+Você também vai notar a pasta node_modules salva com diversas outras pastas dentro. Estou mencionando isso simplesmente para te deixar ciente de onde a mágica acontece.
