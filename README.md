@@ -164,3 +164,37 @@ node index.js
 Você deve ver a mensagem "Olá mundo!" no seu terminal.
 
 [:computer:](https://github.com/FreeCodeCampSp/projeto1_parte_2_codigos/tree/9f458f734b48ef145cbca095f5bbf4bc23af68d7)
+
+Vamos parar um segundo para apreciar e entender o que aconteceu:
+
+> Utilizando a linha de comando (Não uma tela!);
+> Nós mandamos um programa chamado **node**, ler um programa nosso chamado **index.js**.
+> Esse programa **interpretou** nossos comandos e expôs na tela o resultado daquilo.
+
+### De volta as raízes, HTML básico.
+
+Para lembrar o porque estamos fazendo isso e entrando no contexto do projeto vamos fazer uma simples lista de eventos em HTML puro mesmo. Cada item da list atem um *nome* e uma *data* e para simplificar vamso criar eventos fictícios de um futuro distante. No seu editor de texto preferido crie um arquivo chamado index.HTML com o seguinte conteúdo
+
+```html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Lista de eventos</title>
+    </head>
+    <body>
+      <ul>
+        <li><b>Programação defensiva - Como fazer seus robôs não te matarem</b> - 01/02/2900</li>
+        <li><b>Arrumando seus braços robóticos com PHP</b> - 04/02/2900</li>
+        <li><b>Desenvolvimento de jogos ... Mortais</b> - 07/05/2900</li>
+        <li><b>Hackeando a matrix para negociar aumentos</b> - 01/06/2900</li>
+        <li><b>Programando robôs gigantes utilizando NodeJS</b> - 09/06/2900</li>
+      </ul>
+    </body>
+  </html>
+
+```
+[:computer:](https://github.com/FreeCodeCampSp/projeto1_parte_2_codigos/tree/7117668dd3c49d392d3876c87efb6ae3f160393b)
+Você pode abrir esse arquivo no navegador e averiguar que ele deve parecer algo assim:
+
+[![Exemplo do HTML](./exemploHTML.png)](./exemploHTML.png)
