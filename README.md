@@ -31,3 +31,22 @@ npm -v
 Você deve obter um comportamento similar ao mostrado abaixo:
 
 [![Exemplos de linha de comando](./cliExample.gif)](./cliExample.gif)
+
+Parabéns você acabou de dar seus primeiros comandos em uma linha de comando!
+
+### Pastas e navegação
+
+Você quer que a suas aplicações fiquem contidas todas na mesma pasta. Para isso é importante saber navegar por pastas usando a linha de comando, para isso vamos listar alguns comandos iniciais:
+
+- **cd NOME_DE_UMA_PASTA** - Navega até a pasta
+- **dir** - Lista as pastas no diretório atual
+- **cd ..** - Navega até a pasta anterior
+- **mkdir** - Cria uma pasta
+
+Para começarmos crie (pela linha de comando ou de forma tradicional), uma pasta chama projeto2 e navegue até ela como no exemplo abaixo.
+
+[![Navegação de pasta](./cliExample2.gif)](./cliExample2.gif)
+
+Isso muda o **diretório atual** é a referência de onde os comandos vão ser executados.
+
+> Pense no diretório atual como a palavra **aqui**. A palavra não muda mas o significado do que é **aqui** é totalmente diferente se você está em casa ou no trabalho.
