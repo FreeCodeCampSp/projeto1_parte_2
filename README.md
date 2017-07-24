@@ -134,4 +134,26 @@ Isso fará com que o programa pug seja salvo em uma pasta chamada node_modules e
 }
 ```
 
-Você também vai notar a pasta node_modules salva com diversas outras pastas dentro. Estou mencionando isso simplesmente para te deixar ciente de onde a mágica acontece.
+Você também vai notar a pasta node_modules salva com diversas outras pastas dentro. Estou mencionando isso simplesmente para te deixar ciente de onde a mágica acontece. As diversas outras pastas que não chamam PUG são dependências ou dependências das dependências.
+
+[![Pasta node modules](./node_modules.png)](./node_modules.png)
+
+### Iniciando nosso programa
+
+Até o momento nós temos apenas um arquivo de configuração feito por uma ferramenta e um monete de código feito pro terceiros. É hora de começarmos a criar.
+
+O Node é uma forma de **executar javascript em um computador e não só no navegador**, ou seja se você sabe javascript você pode programar em node. A **linguagem** é a mesma, apenas o **ambiente** é que muda.
+
+Crie um arquivo chamado *index.js* usando seu editor favorito na mesma pasta (ou seja projeto2).
+Para garantir que funcione digite o seguinte javascript:
+
+```javascript
+console.log('Olá mundo!')
+```
+
+E para garantir que funciona execute o comando
+```shell
+node index.js
+```
+
+Você deve ver a mensagem "Olá mundo!" no seu terminal.
