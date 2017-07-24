@@ -195,6 +195,18 @@ Para lembrar o porque estamos fazendo isso e entrando no contexto do projeto vam
 
 ```
 [:computer:](https://github.com/FreeCodeCampSp/projeto1_parte_2_codigos/tree/7117668dd3c49d392d3876c87efb6ae3f160393b)
+
 Você pode abrir esse arquivo no navegador e averiguar que ele deve parecer algo assim:
 
 [![Exemplo do HTML](./exemploHTML.png)](./exemploHTML.png)
+
+É algo feio mas serve para nos mostrar o problema que queremos resolver. **A repetição**, toda vez que queremos um novo evento temos que escrever a mesma coisa (Um item da lista , um negrito com o título e a data). Se desejarmos mudar por exemplo a data para itálico ou adicionar alguma cor **precisamos fazer isso no mesmo número de eventos**.
+
+É nesse conceito de evitar repetição que entra a idéia de templates. Pense nele como um molde, por exemplo de cerâmica. Se você mudar o molde pode repetir a mesma estrutura diversas vezes.
+
+> O HTML é como esculpir uma estátua.
+> Um sistema de template é como ter o molde da estátua ou imprimir em 3D, com a diferença que o resultado final é indistinguível do original.
+
+Nosso objetivo é **Separar a informação da apresentação** ou seja, termos uma série de eventos e um layout e aplicar o mesmo para todos.
+
+[![Diagrama de templates](./diagramaTemplates.png)](./diagramaTemplates.png)
