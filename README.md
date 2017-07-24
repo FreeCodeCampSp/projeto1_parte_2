@@ -300,3 +300,5 @@ Um arquivo resultado.html deve ser gerado (todo em uma linha só mesmo, o navega
 ```html
 <!DOCTYPE html><html><head><meta charset="utf-8"><title>Lista de eventos</title></head><body><ul><li><b>Programação defensiva - Como fazer seus robôs não te matarem</b> - 01/02/2900</li><li><b>Arrumando seus braços robóticos com PHP</b> - 04/02/2900</li><li><b>Desenvolvimento de jogos ... Mortais</b> - 07/05/2900</li><li><b>Hackeando a matrix para negociar aumentos</b> - 01/06/2900</li><li><b>Programando robôs gigantes utilizando NodeJS</b> - 09/06/2900</li></ul></body></html>
 ```
+
+[:computer:](https://github.com/FreeCodeCampSp/projeto1_parte_2_codigos/tree/fc107c97d1c79be40305df58803b34f02fe0c619)
