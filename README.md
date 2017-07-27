@@ -302,3 +302,72 @@ Um arquivo resultado.html deve ser gerado (todo em uma linha só mesmo, o navega
 ```
 
 [:computer:](https://github.com/FreeCodeCampSp/projeto1_parte_2_codigos/tree/fc107c97d1c79be40305df58803b34f02fe0c619)
+
+Por hora o Pug fornece uma forma de o arquivo não ser em uma única linha passando a opção {pretty: true}.
+
+```javascript
+// var compileFunction = pug.compileFile('template.pug')
+// A linha acima vira
+var compileFunction = pug.compileFile('template.pug', {pretty: true})
+```
+
+> NOTA: O pug vai remover essa função pretty no futuro. De qualquer forma só estamos o usando como objeto de estudo
+
+[:computer:](https://github.com/FreeCodeCampSp/projeto1_parte_2_codigos/tree/76010a12a3f5d7d238e31c71076a04778b919d7b)
+
+Até agora nós apenas chegamos no ponto de onde partimos. Vamos tentar diminuir nossa repetição de códigos conseguindo assim ser mais **escalável**, vamos separar os dados do conteúdo.
+
+Primeiramente vamos escrever nossos dados em alguma variável para podermos reutilizá-lo
+
+```javascript
+var allEvents = [
+  {
+    name: 'Programação defensiva - Como fazer seus robôs não te matarem',
+    date: '01/02/2900'
+    },
+  {
+    name: 'Arrumando seus braços robóticos com PHP',
+    date: '04/02/2900'
+    },
+  {
+    name: 'Desenvolvimento de jogos ... Mortais',
+    date: '07/05/2900'
+    },
+  {
+    name: 'Hackeando a matrix para negociar aumentos',
+    date: '01/06/2900'
+    },
+  {
+    name: 'Programando robôs gigantes utilizando NodeJS',
+    date: '09/06/2900'
+    }
+]
+```
+
+Como de costume seu arquivo deve parecer o do computadorzinho abaixo:
+
+[:computer:](https://github.com/FreeCodeCampSp/projeto1_parte_2_codigos/tree/07a9f443ff8569c1509e604d1cec32b58870b5a0)
+
+De nada adianta colocar essas informações se não usarmos ela nos templates, vamos modificar nosso template para usar essas variáveis:
+
+Vamos atualizar nosso template.pug para o arquivo menor abaixo:
+
+```pug
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Lista de eventos
+  body
+    ul
+      each event in allEvents
+        li
+          b #{event.name}
+          |  - #{event.date}
+```
+
+Perceba que não há nenhum dado fixo do evento, estamos apenas usando as informações da variável all events.
+
+[:computer:](https://github.com/FreeCodeCampSp/projeto1_parte_2_codigos/tree/688b0677ddbc5af3d36e162dad9d9f3a3fb2b002)
+
+### CSS - Adicionando um estilo
