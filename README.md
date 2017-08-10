@@ -486,3 +486,7 @@ fs.writeFileSync('index.css', cssResult.css)
 ```
 
 [:computer:](https://github.com/FreeCodeCampSp/projeto1_parte_2_codigos/tree/15cf4c973b124dad3d687a757f8f8e7ff9ed5abf)
+
+Atualmente a página resultado.html deve parecer conforme a página abaixo:
+
+[![Página com sass](./exemploHTML2.png)](./exemploHTML2.png)
