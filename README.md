@@ -371,3 +371,118 @@ Perceba que não há nenhum dado fixo do evento, estamos apenas usando as inform
 [:computer:](https://github.com/FreeCodeCampSp/projeto1_parte_2_codigos/tree/688b0677ddbc5af3d36e162dad9d9f3a3fb2b002)
 
 ### CSS - Adicionando um estilo
+
+Assim como nós separamos os dados da marcação, separar o estilo também é algo que muitos desenvolvedores inciaintes já estão acostumados à fazer usando CSS.
+
+Vamos adicionar algum estilo para nossos arquivos por exemplo modificanto a cor da tag bold. vamos salvar o código abaixo em um arquivo separado chamado index.css.
+
+```css
+b {
+  color: green;
+}
+```
+
+[:computer:](https://github.com/FreeCodeCampSp/projeto1_parte_2_codigos/tree/ea4c4d08194507202c55dbc2cffd3501c6382ae3)
+
+E de nada adianta o arquivo se não o incluirmos no nosso template
+
+```pug
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Lista de eventos
+    link(rel='stylesheet', href='index.css')
+  body
+    ul
+      each event in allEvents
+        li
+          b #{event.name}
+          |  - #{event.date}
+```
+
+Agora nossos títulos devem ficar verdes como na imagem abaixo:
+
+[![CSS aplicado](./exemploCss.png)](./exemploCss.png)
+
+### CSS enxuto com sass
+
+Assim como com o HTML que estamos escrevendo em Jade vamos começar a escrever a fonte do nosso CSS em sass, para isso assim como no PUG precisamos de algo que converta o SASS para CSS. No seu terminal digite o seguinte comando
+
+```shell
+npm install --save node-sass
+```
+
+Vamos renomear o arquivo index.scss para index.css (O dialeto do SASS que vamos usar é 100% compatível com CSS).
+
+Agora vamos modificar esse conteúdo para algo que só seria aceito atualmente no sass, como por exemplo regras aninhadas, modifique o conteúdo para
+
+```scss
+ul {
+  color: red;
+  b {
+    color: green;
+  }
+}
+
+```
+
+O conteúdo acima é equivalente ao CSS abaixo, e vamos fazer ele se tornar esse CSS em momentos:
+
+```css
+ul {
+  color: red;
+}
+ul b {
+  color: green;
+}
+
+```
+
+Precisamos agora que nosso arquivo JS converta de SASS para CSS, no mesmo index.js vamos adicionar essa funcionalidade, modificando nosso JS para o JS abaixo:
+
+```javascript
+// Pega o pacote para lidar com arquivos do node (fs = file system, sistema de arquivos)
+var fs = require('fs')
+// Pega o pacote instalado pug
+var pug = require('pug')
+// Pega o pacote instalado node-sass
+var sass = require('node-sass');
+
+var allEvents = [
+  {
+    name: 'Programação defensiva - Como fazer seus robôs não te matarem',
+    date: '01/02/2900'
+    },
+  {
+    name: 'Arrumando seus braços robóticos com PHP',
+    date: '04/02/2900'
+    },
+  {
+    name: 'Desenvolvimento de jogos ... Mortais',
+    date: '07/05/2900'
+    },
+  {
+    name: 'Hackeando a matrix para negociar aumentos',
+    date: '01/06/2900'
+    },
+  {
+    name: 'Programando robôs gigantes utilizando NodeJS',
+    date: '09/06/2900'
+    }
+]
+
+//Retorna uma função que sabe transformar nosso template em HTML
+var compileFunction = pug.compileFile('template.pug', {pretty: true})
+// Escreve em um arquivo chamado  resultado.html
+fs.writeFileSync('resultado.html', compileFunction({allEvents: allEvents}))
+// Converte o SCSS para CSS
+var cssResult = sass.renderSync({
+  file: 'index.scss'
+})
+// Escreve em um artigo chamado index.css
+fs.writeFileSync('index.css', cssResult.css)
+
+```
+
+[:computer:](https://github.com/FreeCodeCampSp/projeto1_parte_2_codigos/tree/15cf4c973b124dad3d687a757f8f8e7ff9ed5abf)
