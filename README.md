@@ -490,3 +490,29 @@ fs.writeFileSync('index.css', cssResult.css)
 Atualmente a página resultado.html deve parecer conforme a página abaixo:
 
 [![Página com sass](./exemploHTML2.png)](./exemploHTML2.png)
+
+Vamos agora adcionar um pouco mais de flexibilidade a nosso layout, vamos imaginar que nós temos não mais cores como vermelho ou verde e sim cores com o nome de  geral (general) e enfâse (highlight) e essas cores vão vir de alguma fonte externa, por exemplo do departamento de design.
+
+Usando as variáveis do sass podemos fazer isso da seguinte forma:
+
+```scss
+$general-color: purple;
+$highlight-color: blue;
+
+ul {
+  color: $general-color;
+  b {
+    color: $highlight-color;
+  }
+}
+```
+
+[:computer:](https://github.com/FreeCodeCampSp/projeto1_parte_2_codigos/tree/e79fb4e3a5e8d05252d4fcec0914dee033440dd2)
+
+### Recapitulando
+
+Até agora nós temos a seguinte estrutura:
+
+* Arquivos na linguagem PUG que nos permitem escrever coisas com menos repetição;
+* Arquivos na linguagem SCSS/SASS que nos permitem eliminar repetições e utilizar funções como variáveis;
+* Um programa que transforma os arquivos de um formato não legível do navegador para outro formato mais legível.
