@@ -516,3 +516,17 @@ Até agora nós temos a seguinte estrutura:
 * Arquivos na linguagem PUG que nos permitem escrever coisas com menos repetição;
 * Arquivos na linguagem SCSS/SASS que nos permitem eliminar repetições e utilizar funções como variáveis;
 * Um programa que transforma os arquivos de um formato não legível do navegador para outro formato mais legível.
+
+
+## Referências
+
+### Pug
+
+* [Getting started](https://pugjs.org/api/getting-started.html)
+* [Learn pug with pugs](https://codepen.io/mimoduo/post/learn-pug-js-with-pugs)
+
+### Sass
+
+* [Guia Sass](http://sass-lang.com/guide)
+* [Assembling sass](https://www.codeschool.com/courses/assembling-sass)
+* [Learning sass](https://www.codecademy.com/learn/learn-sass)
